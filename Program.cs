@@ -1,4 +1,4 @@
-﻿var peripherals = new List<Peripheral>();
+var peripherals = new List<Peripheral>();
 
 mainMenu();
 
@@ -125,12 +125,9 @@ void addPeripheral(char option)
     {
         case 'a':
             {
-                var isCodeValid = false;
+                var isTypeValid = false;
 
                 Console.WriteLine("Add peripheral\n");
-
-                Console.Write("Enter peripheral code: ");
-                var code = Convert.ToInt64(Console.ReadLine());
 
                 Console.Write("Enter peripheral name: ");
                 var name = Console.ReadLine();
@@ -143,7 +140,7 @@ void addPeripheral(char option)
 
                 int type = -1;
 
-                while (!isCodeValid)
+                while (!isTypeValid)
                 {
                     Console.Write("[1] Input device \n[2] Output device \n[3]Input/Output device \nEnter peripheral type: ");
                     type = Convert.ToInt32(Console.ReadLine());
@@ -154,7 +151,7 @@ void addPeripheral(char option)
                     }
                     else
                     {
-                        isCodeValid = true;
+                        isTypeValid = true;
                     }
                 }
 
@@ -162,7 +159,7 @@ void addPeripheral(char option)
                 var assignedTo = Console.ReadLine();
 
 
-                var peripheral = new Peripheral(code, name!, type.IntToPeripheralType(), assignedTo);
+                var peripheral = new Peripheral(name!, type.IntToPeripheralType(), assignedTo);
 
                 peripherals.Add(peripheral);
 
