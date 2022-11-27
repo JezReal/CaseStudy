@@ -4,10 +4,31 @@ public class Peripheral
     public string Name { get; set; }
     public PeripheralType Type { get; set; }
     public string? AssignedTo { get; set; }
+    private static int ItemCount { get; set; } = 1;
 
-    public Peripheral(long code, string name, PeripheralType type, string? assignedTo)
+    public Peripheral(string name, PeripheralType type, string? assignedTo)
     {
-        this.Code = code;
+        var currentYear = DateTime.Now.Year;
+        var minimumLength = 4;
+        var itemCountLength = ItemCount.ToString().Length;
+
+        var code = currentYear.ToString();
+
+        if (itemCountLength < minimumLength)
+        {
+            for (int i = 0; i < minimumLength - itemCountLength; i++)
+            {
+                code += "0";
+            }
+
+            code += ItemCount++;
+        }
+        else
+        {
+            code += ItemCount++;
+        }
+
+        this.Code = Convert.ToInt64(code);
         this.Name = name;
         this.Type = type;
         this.AssignedTo = assignedTo;
