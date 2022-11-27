@@ -17,11 +17,16 @@ public class Peripheral
     {
         var peripheralType = "";
 
-        if (this.Type == PeripheralType.INPUT) {
+        if (this.Type == PeripheralType.INPUT)
+        {
             peripheralType = "Input device";
-        } else if (this.Type == PeripheralType.OUTPUT) {
+        }
+        else if (this.Type == PeripheralType.OUTPUT)
+        {
             peripheralType = "Output device";
-        } else {
+        }
+        else
+        {
             peripheralType = "Input/Output device";
         }
 
