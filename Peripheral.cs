@@ -51,7 +51,7 @@ public class Peripheral
             peripheralType = "Input/Output device";
         }
 
-        return $"Peripheral Info:\n\nCode: {this.Code} \nName: {this.Name} \nPeripheral Type: {peripheralType} \nAssignedTo: {this.AssignedTo}\n--------";
+        return $"Peripheral Info:\n\nCode: {this.Code} \nName: {this.Name} \nPeripheral Type: {peripheralType} \nAssignedTo: {this.AssignedTo}\n------------------";
     }
 
 }
