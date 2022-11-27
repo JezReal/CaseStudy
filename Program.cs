@@ -1,4 +1,4 @@
-var peripherals = new List<Peripheral>();
+﻿var peripherals = new List<Peripheral>();
 
 mainMenu();
 
@@ -233,7 +233,7 @@ void viewRecords(char option)
 
             var availablePeripherals = new List<Peripheral>(peripherals.Where((peripheral) =>
             {
-                return peripheral.AssignedTo == null;
+                return peripheral.AssignedTo == "";
             }));
 
             availablePeripherals.ForEach((peripheral) =>
@@ -247,7 +247,7 @@ void viewRecords(char option)
             Console.WriteLine("Unavailable peripherals: \n");
             var notAvailablePeripherals = new List<Peripheral>(peripherals.Where((peripheral) =>
            {
-               return peripheral.AssignedTo != null;
+               return peripheral.AssignedTo != "";
            }));
 
             notAvailablePeripherals.ForEach((peripheral) =>
